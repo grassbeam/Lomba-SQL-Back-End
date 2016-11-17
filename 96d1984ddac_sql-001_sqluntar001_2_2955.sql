@@ -1,0 +1,12 @@
+insert into peserta(id_peserta,nama,jurusan,total_sks) values('00128','Zhang','Ilmu Komputer',102);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('12345','Shankar','Ilmu Komputer',32);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('19991','Brandt','Sejarah',80);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('23121','Chavez','Ekonomi',110);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('44553','Peltier','Fisika',56);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('45678','Levy','Fisika',46);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('54321','Williams','Ilmu Komputer',54);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('70557','Snow','Fisika',0);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('76543','Brown','Ilmu Komputer',58);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('76653','Aoi','Teknik Elektro',60);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('98765','Bourikas','Teknik Elektro',98);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('98988','Tanaka','Biologi',120);

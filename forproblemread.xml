@@ -1,0 +1,213 @@
+<listAnswer>
+
+<problem>
+		<problemNumber>1</problemNumber>
+		<answer>create table peserta(
+    id_peserta varchar2(6) not null,
+	nama varchar2(20) not null,
+	jurusan varchar2(30) not null,
+	total_sks  number not null,
+	primary key(id_peserta)
+ );
+ 
+ create table pelajaran(
+   kode_p varchar2(8) not null,
+   mata_pelajaran varchar2(30) not null,
+   jurusan varchar2(20) not null,
+   sks number not null,
+   primary key(kode_p)
+ );
+ 
+ create table jadwal(
+   kode_p varchar2(8) not null,
+   sesi_jadwal char(1) not null,
+   semester varchar2(15) not null,
+   tahun char(4) not null,
+   gedung varchar2(15) not null,
+   ruang char(5) not null,
+   waktu char(6) not null,
+   foreign key(kode_p) references pelajaran(kode_p)
+ );
+ 
+ create table pengajar(
+   id_pengajar char(6) not null,
+   nama varchar2(20) not null,
+   jurusan varchar2(30) not null,
+   honor number,
+   primary key(id_pengajar)  
+  );
+  
+  create table nilai(
+    id_peserta varchar2(6) not null,
+	kode_p varchar2(8) not null,
+	semester varchar2(15) not null,
+	tahun char(4) not null,
+	huruf_mutu char(2) null,
+	foreign key(id_peserta) references peserta(id_peserta),
+	foreign key(kode_p) references pelajaran(kode_p)
+  );
+ 
+ </answer>
+		<tableUsed>peserta</tableUsed>
+	</problem>
+	
+	<problem>
+		<problemNumber>2</problemNumber>
+		<answer>insert into peserta(id_peserta,nama,jurusan,total_sks) values('00128','Zhang','Ilmu Komputer',102);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('12345','Shankar','Ilmu Komputer',32);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('19991','Brandt','Sejarah',80);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('23121','Chavez','Ekonomi',110);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('44553','Peltier','Fisika',56);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('45678','Levy','Fisika',46);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('54321','Williams','Ilmu Komputer',54);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('70557','Snow','Fisika',0);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('76543','Brown','Ilmu Komputer',58);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('76653','Aoi','Teknik Elektro',60);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('98765','Bourikas','Teknik Elektro',98);
+ insert into peserta(id_peserta,nama,jurusan,total_sks) values('98988','Tanaka','Biologi',120);
+</answer>
+		<tableUsed>peserta</tableUsed>
+	</problem>
+	<problem>
+		<problemNumber>3</problemNumber>
+		<answer>insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('BIO-101','Pengenalan Biologi','Biologi',4);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('BIO-301','Genetika','Biologi',4);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('BIO-399','Komputasi Biologi','Biologi',4)
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('CS-101','Pengenalan Ilmu Komputer','Ilmu Komputer',3);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('CS-190','Gamification','Ilmu Komputer',4);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('CS-315','Robotika','Ilmu Komputer',4);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('CS-319','Pengolahan Citra','Ilmu Komputer',3);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('CS-347','Sistem Basis Data','Ilmu Komputer',3);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('EE-181','Pengenalan Digital','Teknik Elektro',3);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('FIN-201','Investasi Perbankan','Ekonomi',3);
+ insert into pelajaran(kode_p,mata_pelajaran,jurusan,sks) values ('HIS-351','Sejarah Dunia','Sejarah dan Budaya',3);
+</answer>
+		<tableUsed>pelajaran</tableUsed>
+	</problem>
+	<problem>
+		<problemNumber>4</problemNumber>
+		<answer>insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('BIO-101','1','Ganjil','2014','Painter','514','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('BIO-301','1','Ganjil','2015','Painter','514','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-101','1','Ganjil','2014','Packard','101','Malam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-101','1','Genap','2015','Packard','101','Malam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-190','1','Genap','2014','Taylor','3128','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-190','2','Genap','2014','Taylor','3128','Malam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-315','1','Genap','2015','Watson','120','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-319','1','Genap','2015','Watson','100','Malam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-319','2','Genap','2015','Taylor','3128','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('CS-347','1','Ganjil','2014','Taylor','3128','Malam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('EE-181','1','Genap','2014','Taylor','3128','Mazlam');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('FIN-201','1','Genap','2015','Packard','101','Siang');
+ insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ ('HIS-351','1','Genap','2015','Painter','514','Siang');
+ --insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+-- ('MU-199','1','Genap','2015','Packard','101','Malam');
+ --insert into jadwal(kode_p,sesi_jadwal,semester,tahun,gedung,ruang,waktu) values
+ --('PHY-101','1','Ganjil','2014','Watson','100','Malam');
+</answer>
+		<tableUsed>jadwal</tableUsed>
+	</problem>
+	<problem>
+		<problemNumber>5</problemNumber>
+		<answer>insert into pengajar(id_pengajar,nama,jurusan,honor) values('22222','Einstein','Fisika',95000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('12121','Wu','Ekonomi',90000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('32343','El Said','Sejarah dan Budaya',60000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('45565','Katz','Ilmu Komputer',75000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('98345','Kim','Teknik Elektro',80000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('76766','Crick','Biologi',72000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('10101','Srinivasan','Ilmu Komputer',65000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('58583','Califieri','Sejarah dan Budaya',62000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('83821','Brandt','Ilmu Komputer',92000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('33456','Gold','Fisika',87000);
+  insert into pengajar(id_pengajar,nama,jurusan,honor) values('76543','Singh','Ekonomi',80000);
+</answer>
+		<tableUsed>pengajar</tableUsed>
+	</problem>
+	<problem>
+		<problemNumber>6</problemNumber>
+		<answer>insert into kelas(id_pengajar,kode_p,semester,tahun) values('10101','CS-101','Ganjil','2014');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('10101','CS-315','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('10101','CS-347','Ganjil','2014');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('12121','FIN-201','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('32343','HIS-351','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('45565','CS-101','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('45565','CS-319','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('76766','BIO-301','Ganjil','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('83821','CS-190','Genap','2014');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('83821','CS-190','Genap','2014');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('83821','CS-319','Genap','2015');
+  insert into kelas(id_pengajar,kode_p,semester,tahun) values('98345','EE-181','Genap','2014');
+</answer>
+		<tableUsed>kelas</tableUsed>
+	</problem>
+	<problem>
+		<problemNumber>7</problemNumber>
+		<answer>insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu)values('00128','CS-101','Ganjil','2014','A');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('00128','CS-347','Ganjil','2014','A');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('12345','CS-101','Ganjil','2014','C');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('12345','CS-190','Genap','2014','A');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('19991','HIS-351','Genap','2015','B');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('23121','FIN-201','Genap','2015','A');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('98988','BIO-101','Ganjil','2014','A');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('98988','BIO-301','Ganjil','2015',null);
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('76653','EE-181','Genap','2014','C');
+  insert into nilai(id_peserta,kode_p,semester,tahun,huruf_mutu) values('76543','CS-319','Genap','2015','A');
+</answer>
+		<tableUsed>nilai</tableUsed>
+	</problem>
+
+	<problem>
+		<problemNumber>8</problemNumber>
+		<answer>select id_peserta as "ID", nama as "Nama Peserta" from peserta where nama like 'B%' or nama like '%s'</answer>
+	</problem>
+		<problem>
+		<problemNumber>9</problemNumber>
+		<answer>select M.mata_pelajaran as "Mata Pelajaran", G.jurusan as "Jurusan" from pelajaran M, pengajar G, kelas K where K.id_pengajar = G.id_pengajar and K.kode_p = M.kode_p and G.nama = 'Kim'</answer>
+	</problem>
+		<problem>
+		<problemNumber>10</problemNumber>
+		<answer>select P.nama ||' belum memiliki huruf mutu' as "Informasi" from Peserta P, nilai N where N.huruf_mutu is null and P.id_peserta = N.id_peserta</answer>
+	</problem>
+		<problem>
+		<problemNumber>11</problemNumber>
+		<answer>select nama, honor as "Honor sebelum dipotong PPH 5%", honor * 0.05 as "PPH", honor - (honor * 0.05) as "Honor yang diterima" from Pengajar order by honor asc</answer>
+	</problem>
+		<problem>
+		<problemNumber>12</problemNumber>
+		<answer>select jurusan as "Jurusan", min(honor) as "Honor terkecil", avg(honor) as "Honor rata-rata", max(honor) as "Honor terbesar" from Pengajar group by jurusan</answer>
+	</problem>
+		<problem>
+		<problemNumber>13</problemNumber>
+		<answer>select P.nama as "Nama Pengajar", M.mata_pelajaran as "Mata Pelajaran", M.jurusan as "Jurusan" from Pelajaran M, Pengajar P, kelas K where K.id_pengajar = P.id_pengajar and K.kode_p = M.kode_p and K.tahun = '2015' and K.semester = 'Genap'</answer>
+	</problem>
+		<problem>
+		<problemNumber>14</problemNumber>
+		<answer>select P.nama as "Nama Pengajar", count(K.kode_p) as "Jumlah kelas" from pengajar P, kelas K where P.id_pengajar = K.id_pengajar and tahun = '2014' group by P.nama</answer>
+	</problem>
+		<problem>
+		<problemNumber>15</problemNumber>
+		<answer>select S.nama as "Nama Peserta", P.mata_pelajaran as "Mata Pelajaran", N.huruf_mutu as "Nilai Mutu" from Peserta S, Pelajaran P, Nilai N where N.id_peserta = S.id_peserta and N.kode_p = P.kode_p and N.tahun = '2015' and semester = 'Genap' order by S.nama asc</answer>
+	</problem>
+		<problem>
+		<problemNumber>16</problemNumber>
+		<answer>select gedung as "Gedung", count(ruang) as "Intensitas Pemakaian Gedung" from jadwal where semester ='Genap' group by gedung</answer>
+	</problem>
+		<problem>
+		<problemNumber>17</problemNumber>
+		<answer>select nama as "Nama Pengajar", jurusan as "Jurusan", honor as "Honor" from Pengajar where honor > (select avg(honor) from pengajar)</answer>
+	</problem>
+	
+	
+</listAnswer>
