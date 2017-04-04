@@ -6,7 +6,7 @@
 
 >> ###Credits to Hobert Ho:
 <ul>
-<li>Github: <a href="https://github.com/hanzamunes">hanzmunes</a></li>
+<li>Github: <a href="https://github.com/hobertho">Hobert Ho</a></li>
 <li>Facebook: <a href="https://www.facebook.com/hobert.ho?fref=ts">Hobert Ho</a></li>
 <li>Linkedin: <a href="https://www.linkedin.com/in/hobert-ho-15036ba2">Hobert Ho</a></li>
 </ul>
